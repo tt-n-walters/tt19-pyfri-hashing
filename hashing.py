@@ -25,12 +25,13 @@ def calculate_hashes():
     print("Average of {:,} hashes per second.".format(counter / 10))
 
 
-# Create an appropriate number of processes
-processes = []
-for _ in range(6):
-    process = multiprocessing.Process(target=calculate_hashes)
-    processes.append(process)
+if __name__ == "__main__":
+    # Create an appropriate number of processes
+    processes = []
+    for _ in range(6):
+        process = multiprocessing.Process(target=calculate_hashes)
+        processes.append(process)
 
-# Start each process
-for process in processes:
-    process.start()
+    # Start each process
+    for process in processes:
+        process.start()
