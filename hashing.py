@@ -1,7 +1,10 @@
 import hashlib
 
+# Deterministic
+# Chaotic
+# Non-reversible
 
-name = "Nico"
+name = "Mico"
 
 # Encode our input
 encoded = name.encode("utf-8")
