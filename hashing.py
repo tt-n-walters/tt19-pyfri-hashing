@@ -3,6 +3,16 @@ import timeit
 import multiprocessing
 
 
+def hash(name):
+    # Encode our input
+    encoded = name.encode("utf-8")
+    # Hash our encoding
+    hashed = hashlib.md5(encoded)
+    # Get the digest of the hash
+    digest = hashed.hexdigest()
+    return digest
+
+
 def calculate_hashes():
     start_time = timeit.default_timer()
     end_time = start_time + 10
@@ -12,12 +22,7 @@ def calculate_hashes():
 
     print("Starting hashes.")
     while timeit.default_timer() < end_time:
-        # Encode our input
-        encoded = name.encode("utf-8")
-        # Hash our encoding
-        hashed = hashlib.md5(encoded)
-        # Get the digest of the hash
-        digest = hashed.hexdigest()
+
         counter += 1
 
     print("Finished hashes.")
