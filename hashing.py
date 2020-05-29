@@ -1,9 +1,7 @@
 import hashlib
 import timeit
+import multiprocessing
 
-# Deterministic
-# Chaotic
-# Non-reversible
 
 def calculate_hashes():
     start_time = timeit.default_timer()
@@ -25,4 +23,9 @@ def calculate_hashes():
     print("Finished hashes.")
     print("Hashed {:,} times in 20 seconds.".format(counter))
     print("Average of {:,} hashes per second.".format(counter / 20))
+
+
+processes = []
+for _ in range(6):
+    process = multiprocessing.Process(target=calculate_hashes)
 
