@@ -5,7 +5,7 @@ import multiprocessing
 
 def calculate_hashes():
     start_time = timeit.default_timer()
-    end_time = start_time + 20
+    end_time = start_time + 10
 
     name = "Mico"
     counter = 0
@@ -21,11 +21,16 @@ def calculate_hashes():
         counter += 1
 
     print("Finished hashes.")
-    print("Hashed {:,} times in 20 seconds.".format(counter))
-    print("Average of {:,} hashes per second.".format(counter / 20))
+    print("Hashed {:,} times in 10 seconds.".format(counter))
+    print("Average of {:,} hashes per second.".format(counter / 10))
 
 
+# Create an appropriate number of processes
 processes = []
 for _ in range(6):
     process = multiprocessing.Process(target=calculate_hashes)
+    processes.append(process)
 
+# Start each process
+for process in processes:
+    process.start()
