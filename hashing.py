@@ -31,12 +31,20 @@ def calculate_hashes():
 
 
 if __name__ == "__main__":
-    # Create an appropriate number of processes
-    processes = []
-    for _ in range(6):
-        process = multiprocessing.Process(target=calculate_hashes)
-        processes.append(process)
+    # # Create an appropriate number of processes
+    # processes = []
+    # for _ in range(6):
+    #     process = multiprocessing.Process(target=calculate_hashes)
+    #     processes.append(process)
 
-    # Start each process
-    for process in processes:
-        process.start()
+    # # Start each process
+    # for process in processes:
+    #     process.start()
+
+    for password in open("rockyou.txt", encoding="latin-1"):
+        password = password.strip()
+        if password == "walters":
+            print("Found it!")
+            break
+    else:
+        print("Doesn't exist!")
