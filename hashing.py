@@ -22,7 +22,7 @@ def calculate_hashes():
 
     print("Starting hashes.")
     while timeit.default_timer() < end_time:
-
+        hash(name)
         counter += 1
 
     print("Finished hashes.")
@@ -42,13 +42,15 @@ if __name__ == "__main__":
     #     process.start()
 
 
-    cipher = "20806e81832a32947305694c9ead8731"
+    # cipher = "20806e81832a32947305694c9ead8731"
 
-    for password in open("rockyou.txt", encoding="latin-1"):
-        password = password.strip()
-        hashed = hash(password)
-        if hashed == cipher:
-            print("Found it!", password)
-            break
-    else:
-        print("Doesn't exist!")
+    # for password in open("rockyou.txt", encoding="latin-1"):
+    #     password = password.strip()
+    #     hashed = hash(password)
+    #     if hashed == cipher:
+    #         print("Found it!", password)
+    #         break
+    # else:
+    #     print("Doesn't exist!")
+
+    calculate_hashes()
