@@ -41,10 +41,14 @@ if __name__ == "__main__":
     # for process in processes:
     #     process.start()
 
+
+    cipher = "20806e81832a32947305694c9ead8731"
+
     for password in open("rockyou.txt", encoding="latin-1"):
         password = password.strip()
-        if password == "walters":
-            print("Found it!")
+        hashed = hash(password)
+        if hashed == cipher:
+            print("Found it!", password)
             break
     else:
         print("Doesn't exist!")
