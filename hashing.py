@@ -40,27 +40,14 @@ def get_variations(password):
 
 if __name__ == "__main__":
 
-    get_variations("techtalents")
+    cipher = "5b56830ba7a84275fb1125f327f8ce6c"
 
-    # # Create an appropriate number of processes
-    # processes = []
-    # for _ in range(6):
-    #     process = multiprocessing.Process(target=calculate_hashes)
-    #     processes.append(process)
-
-    # # Start each process
-    # for process in processes:
-    #     process.start()
-
-
-    # cipher = "20806e81832a32947305694c9ead8731"
-
-    # for password in open("rockyou.txt", encoding="latin-1"):
-    #     password = password.strip()
-    #     hashed = hash(password)
-    #     if hashed == cipher:
-    #         print("Found it!", password)
-    #         break
-    # else:
-    #     print("Doesn't exist!")
+    for password in open("rockyou.txt", encoding="latin-1"):
+        password = password.strip()
+        hashed = hash(password)
+        if hashed == cipher:
+            print("Found it!", password)
+            break
+    else:
+        print("Doesn't exist!")
 
