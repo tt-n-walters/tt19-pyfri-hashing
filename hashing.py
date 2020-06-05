@@ -35,7 +35,7 @@ def get_variations(password):
     for i in range(10):
         v = password + str(i)
         variations.append(v)
-    print(variations)
+    return variations
 
 
 if __name__ == "__main__":
@@ -44,10 +44,11 @@ if __name__ == "__main__":
 
     for password in open("rockyou.txt", encoding="latin-1"):
         password = password.strip()
-        hashed = hash(password)
-        if hashed == cipher:
-            print("Found it!", password)
-            break
+        for variation in get_variations(password):
+            hashed = hash(variation)
+            if hashed == cipher:
+                print("Found it!", variation)
+                break
     else:
         print("Doesn't exist!")
 
