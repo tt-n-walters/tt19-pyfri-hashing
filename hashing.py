@@ -30,6 +30,14 @@ def calculate_hashes():
     print("Average of {:,} hashes per second.".format(counter / 10))
 
 
+def get_variations(password):
+    variations = []
+    for i in range(10):
+        v = password + str(i)
+        variations.append(v)
+    print(variations)
+
+
 if __name__ == "__main__":
     # # Create an appropriate number of processes
     # processes = []
