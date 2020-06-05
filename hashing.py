@@ -39,6 +39,9 @@ def get_variations(password):
 
 
 if __name__ == "__main__":
+
+    get_variations("techtalents")
+
     # # Create an appropriate number of processes
     # processes = []
     # for _ in range(6):
@@ -61,4 +64,3 @@ if __name__ == "__main__":
     # else:
     #     print("Doesn't exist!")
 
-    calculate_hashes()
